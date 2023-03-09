@@ -1,9 +1,11 @@
 import styled from "styled-components";
+import Orb from "./components/orb/Orb";
 import { MainLayout } from "./styles/Layouts";
 
 function App() {
   return (
     <AppStyled>
+      <Orb />
 
       <MainLayout />
 

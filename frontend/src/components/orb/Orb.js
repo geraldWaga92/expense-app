@@ -1,6 +1,6 @@
-import React from 'react'
+// import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import { useWindowSize } from '../../utils/useWindowSize';
+import { useWindowSize } from '../../utils/UseWindowSize'
 
 function Orb() {
 
@@ -27,10 +27,10 @@ function Orb() {
         border-radius: 50%;
         margin-left: -37vh;
         margin-top: -37vh;
-        background: linear-gradient(180deg, #F56692 0%, #F2994A 100%);
-        filter: blur(400px);
+        background: linear-gradient(180deg, #C6FFDD 0%, #FBD786 50%, #f64f59 100%);
+        filter: blur(300px);
         animation: ${moveOrb} 15s alternate linear infinite;
-    `;
+        `;
 
     return (
         <OrbStyled></OrbStyled>
