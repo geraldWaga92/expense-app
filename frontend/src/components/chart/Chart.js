@@ -14,7 +14,7 @@ import {
 import { Line } from 'react-chartjs-2'
 import styled from 'styled-components'
 import { useGlobalContext } from '../../context/GlobalContext'
-// import { dateFormat } from '../../utils/dateFormat'
+import { dateFormat } from '../../utils/DateFormat'
 
 ChartJs.register(
     CategoryScale,
@@ -33,7 +33,7 @@ function Chart() {
     const data = {
         labels: incomes.map((inc) => {
             const { date } = inc
-            // return dateFormat(date)
+            return dateFormat(date)
         }),
         datasets: [
             {
@@ -45,7 +45,7 @@ function Chart() {
                     })
                 ],
                 backgroundColor: 'green',
-                tension: .2
+                tension: .2 // to make the data line curved
             },
             {
                 label: 'Expenses',
@@ -56,7 +56,7 @@ function Chart() {
                     })
                 ],
                 backgroundColor: 'red',
-                tension: .2
+                tension: .2 // to make the data line curved
             }
         ]
     }
