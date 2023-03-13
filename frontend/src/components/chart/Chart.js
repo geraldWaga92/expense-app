@@ -13,8 +13,8 @@ import {
 
 import { Line } from 'react-chartjs-2'
 import styled from 'styled-components'
-import { useGlobalContext } from '../../context/globalContext'
-import { dateFormat } from '../../utils/dateFormat'
+import { useGlobalContext } from '../../context/GlobalContext'
+// import { dateFormat } from '../../utils/dateFormat'
 
 ChartJs.register(
     CategoryScale,
@@ -33,7 +33,7 @@ function Chart() {
     const data = {
         labels: incomes.map((inc) => {
             const { date } = inc
-            return dateFormat(date)
+            // return dateFormat(date)
         }),
         datasets: [
             {
