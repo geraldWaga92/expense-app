@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useGlobalContext } from '../../context/GlobalContext';
-// import History from '../../History/History';
+import History from '../../history/History';
 import { InnerLayout } from '../../styles/Layouts';
 import { dollar } from '../../utils/Icons';
 import Chart from '../chart/Chart';
@@ -43,10 +43,11 @@ function Dashboard() {
                         </div>
                     </div>
                     <div className="history-con">
-                        {/* <History /> */}
+                        <History />
                         <h2 className="salary-title">Min <span>Salary</span>Max</h2>
                         <div className="salary-item">
                             <p>
+
                                 ${Math.min(...incomes.map(item => item.amount))}
                             </p>
                             <p>
@@ -76,12 +77,21 @@ const DashboardStyled = styled.div`
         gap: 2rem;
         .chart-con{
             grid-column: 1 / 4;
-            height: 400px;
+            height: 300px;
             .amount-con{
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 2rem;
-                margin-top: 2rem;
+                gap: 1.5rem;
+                margin-top: 1.3rem;
+                .income h2 {
+                    color: green
+                }
+                .expense h2 {
+                    color: red
+                }
+                .balance h2 {
+                    color: blue
+                }
                 .income, .expense{
                     grid-column: span 2;
                 }
@@ -92,7 +102,7 @@ const DashboardStyled = styled.div`
                     border-radius: 20px;
                     padding: 1rem;
                     p{
-                        font-size: 3.5rem;
+                        font-size: 2rem;
                         font-weight: 700;
                     }
                 }
@@ -103,10 +113,12 @@ const DashboardStyled = styled.div`
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
+                   
                     p{
-                        color: var(--color-green);
-                        opacity: 0.6;
-                        font-size: 4.5rem;
+                        // color: var(--color-green);
+                        // opacity: 0.6;
+                        font-size: 2rem;
+                        
                     }
                 }
             }
@@ -115,15 +127,15 @@ const DashboardStyled = styled.div`
         .history-con{
             grid-column: 4 / -1;
             h2{
-                margin: 1rem 0;
+                margin: .5rem 0;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
             }
             .salary-title{
-                font-size: 1.2rem;
+                font-size: 1rem;
                 span{
-                    font-size: 1.8rem;
+                    font-size: 1.3rem;
                 }
             }
             .salary-item{
@@ -137,8 +149,14 @@ const DashboardStyled = styled.div`
                 align-items: center;
                 p{
                     font-weight: 600;
-                    font-size: 1.6rem;
+                    font-size: 1.3rem;
                 }
+            }
+        }
+
+        @media screen and (max-width: 1040px) {
+            .amount-con{
+                display:inline-grid;
             }
         }
     }
