@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useGlobalContext } from '../../context/GlobalContext';
@@ -6,7 +7,7 @@ import Form from '../form/Form';
 import IncomeItem from '../incomeItem/IncomeItem';
 
 function Income() {
-    const { addIncome, incomes, getIncomes, deleteIncome, totalIncome } = useGlobalContext()
+    const { incomes, getIncomes, deleteIncome, totalIncome } = useGlobalContext()
 
     useEffect(() => {
         getIncomes()
