@@ -16,10 +16,13 @@ export const GlobalProvider = ({ children }) => {
     //calculate incomes
     const addIncome = async (income) => {
         // accept whatever value we have from the server
+
+        // eslint-disable-next-line no-unused-vars
         const response = await axios.post(`${BASE_URL}add-income`, income)
             .catch((err) => {
                 setError(err.response.data.message)
             })
+        // console.log(response);
         getIncomes()
     }
 
@@ -30,6 +33,7 @@ export const GlobalProvider = ({ children }) => {
     }
 
     const deleteIncome = async (id) => {
+        // eslint-disable-next-line no-unused-vars
         const res = await axios.delete(`${BASE_URL}delete-income/${id}`)
         getIncomes()
     }
@@ -46,6 +50,7 @@ export const GlobalProvider = ({ children }) => {
 
     //calculate expenses
     const addExpense = async (income) => {
+        // eslint-disable-next-line no-unused-vars
         const response = await axios.post(`${BASE_URL}add-expense`, income)
             .catch((err) => {
                 setError(err.response.data.message)
@@ -60,6 +65,7 @@ export const GlobalProvider = ({ children }) => {
     }
 
     const deleteExpense = async (id) => {
+        // eslint-disable-next-line no-unused-vars
         const res = await axios.delete(`${BASE_URL}delete-expense/${id}`)
         getExpenses()
     }
