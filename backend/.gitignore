@@ -9,7 +9,8 @@
 /coverage
 
 # production
-/build
+package-json.lock
+.env
 
 # misc
 .DS_Store
